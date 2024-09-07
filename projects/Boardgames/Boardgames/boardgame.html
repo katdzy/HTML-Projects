@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+</head>
+<style type="text/css">
+body {
+    text-align: center;
+}
+
+.tictactoe {
+    border: solid 1px black;
+    border-collapse: collapse;
+	text-align: center;
+    margin: 1.2em auto;
+}
+
+.tictactoe tr {
+    border: solid 2px black;
+}
+
+.tictactoe tr td {
+    border: solid 1px black;
+    width: 50px;
+    height: 50px;
+}
+
+.chess {
+    border: solid 1px black;
+    border-collapse: collapse;
+	text-align: center;
+    margin: 1.2em auto;
+}
+
+.chess tr td {
+    border: solid 3px rgb(0, 0, 0);
+}
+
+.chess .blacks {
+    background-color: rgb(111,143,114);
+}
+
+.chess td {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    background-color: rgb(173,189,143);
+}
+
+.scrabble {
+    border: solid 1px rgb(255, 255, 255);
+    border-collapse: collapse;
+	text-align: center;
+    margin: 1.2em auto;
+}
+
+.scrabble tr td {
+    border: solid 3px rgb(255, 255, 255);
+}
+
+.scrabble td {
+    width: 50px;
+    height: 50px;
+    font-size: 15px;
+    background-color: #ddf5b6;
+}
+
+.scrabble .orange {
+    background-color: orange;
+}
+
+.scrabble .pink {
+    background-color: rgb(250, 140, 158);
+
+}
+
+.scrabble .lblue {
+    background-color: rgb(46, 186, 233);
+}
+
+.scrabble .blue {
+    background-color: rgb(75, 75, 255);
+    color: #fff;
+}
+</style>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <table class="tictactoe">
+        <tr>
+            <td></td>
+            <td>X</td>
+            <td>O</td>
+            <td></td>
+            <td>O</td>
+            <td>X</td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>O</td>
+        </tr>
+        <tr>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>O</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>O</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>O</td>
+            <td>X</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>O</td>
+            <td>X</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>X</td>
+            <td></td>
+            <td>O</td>
+            <td>X</td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>X</td>
+            <td>O</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>X</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>X</td>
+            <td>X</td>
+            <td></td>
+            <td></td>
+            <td>O</td>
+            <td></td>
+            <td>O</td>
+            <td></td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>O</td>
+            <td></td>
+            <td>O</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <h1>Chess</h1>
+    <table class="chess">
+        <tr>
+            <td>&#9820;</td>
+            <td class="blacks">&#9822;</td>
+            <td>&#9821;</td>
+            <td class="blacks">	&#9819;</td>
+            <td>&#9818;</td>
+            <td class="blacks">	&#9821;</td>
+            <td>&#9822;</td>
+            <td class="blacks">&#9820;</td>
+        </tr>
+        <tr>
+            <td class="blacks">&#9823;</td>
+            <td>&#9823;</td>
+            <td class="blacks">&#9823;</td>
+            <td>&#9823;</td>
+            <td class="blacks">&#9823;</td>
+            <td>&#9823;</td>
+            <td class="blacks">&#9823;</td>
+            <td>&#9823;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="blacks">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&#9817;</td>
+            <td class="blacks">&#9817;</td>
+            <td>&#9817;</td>
+            <td class="blacks">&#9817;</td>
+            <td>&#9817;</td>
+            <td class="blacks">&#9817;</td>
+            <td>&#9817;</td>
+            <td class="blacks">&#9817;</td>
+        </tr>
+        <tr>
+            <td class="blacks">&#9814;</td>
+            <td>&#9816;</td>
+            <td class="blacks">	&#9815;</td>
+            <td>&#9813;</td>
+            <td class="blacks">&#9812;</td>
+            <td>&#9815;</td>
+            <td class="blacks">&#9816;</td>
+            <td>&#9814;</td>
+        </tr>
+    </table>
+
+    <h1>Scrabble</h1>
+    <table class="scrabble">
+        <tr>
+            <td class="orange">Triple Word</td> 
+            <td></td> 
+            <td></td> 
+            <td class="lblue">Double Letter</td>
+            <td></td>
+            <td></td> 
+            <td></td> 
+            <td class="orange">Triple Word</td> 
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td class="lblue">Double Letter</td>
+            <td></td>
+            <td></td> 
+            <td class="orange">Triple Word</td> 
+        </tr>
+        <tr>
+            <td></td> 
+            <td class="pink">Double Word</td>
+            <td></td> 
+            <td></td> 
+            <td></td>
+            <td class="blue">Triple Letter</td>
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td class="blue">Triple Letter</td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td class="pink">Double Word</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td> 
+            <td></td>
+            <td class="pink">Double Word</td>
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td class="lblue">Double Letter</td> 
+            <td></td> 
+            <td class="lblue">Double Letter</td>
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td class="pink">Double Word</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td class="lblue">Double Letter</td>
+            <td></td>
+            <td></td> 
+            <td class="pink">Double Word</td>
+            <td></td>
+            <td></td> 
+            <td></td> 
+            <td class="lblue">Double Letter</td>
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td class="pink">Double Word</td>
+            <td></td>
+            <td></td> 
+            <td class="lblue">Double Letter</td> 
+        </tr>
+        <tr>
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td></td> 
+            <td class="pink">Double Word</td>
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td>
+            <td class="pink">Double Word</td>
+            <td></td>
+            <td></td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td></td> 
+            <td class="blue">Triple Letter</td>
+            <td></td> 
+            <td></td> 
+            <td></td>
+            <td class="blue">Triple Letter</td>
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td class="blue">Triple Letter</td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td class="blue">Triple Letter</td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td></td> 
+            <td></td>
+            <td class="lblue">Double Letter</td> 
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td class="lblue">Double Letter</td>  
+            <td></td> 
+            <td class="lblue">Double Letter</td>  
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td class="lblue">Double Letter</td> 
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td class="orange">Triple Word</td>
+            <td></td>
+            <td></td> 
+            <td class="lblue">Double Letter</td> 
+            <td></td>
+            <td></td> 
+            <td></td> 
+            <td class="pink">&#9733;
+            </td> 
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td class="lblue">Double Letter</td>
+            <td></td>
+            <td></td> 
+            <td class="orange">Triple Word</td>
+        </tr>
+        <tr>
+            <td></td> 
+            <td></td>
+            <td class="lblue">Double Letter</td>
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td class="lblue">Double Letter</td> 
+            <td></td> 
+            <td class="lblue">Double Letter</td>  
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td class="lblue">Double Letter</td> 
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td></td> 
+            <td class="blue">Triple Letter</td>
+            <td></td> 
+            <td></td> 
+            <td></td>
+            <td class="blue">Triple Letter</td>
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td class="blue">Triple Letter</td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td class="blue">Triple Letter</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td></td> 
+            <td class="pink">Double Word</td>
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td></td>
+            <td class="pink">Double Word</td>
+            <td></td>
+            <td></td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td class="lblue">Double Letter</td> 
+            <td></td>
+            <td></td> 
+            <td class="pink">Double Word</td>
+            <td></td>
+            <td></td> 
+            <td></td> 
+            <td class="lblue">Double Letter</td>  
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td class="pink">Double Word</td>
+            <td></td>
+            <td></td> 
+            <td class="lblue">Double Letter</td> 
+        </tr>
+        <tr>
+            <td></td> 
+            <td></td>
+            <td class="pink">Double Word</td>
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td class="lblue">Double Letter</td>
+            <td></td> 
+            <td class="lblue">Double Letter</td>
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td class="pink">Double Word</td>
+            <td></td> 
+            <td></td>
+        </tr>
+        <tr>
+            <td></td> 
+            <td class="pink">Double Word</td>
+            <td></td> 
+            <td></td> 
+            <td></td>
+            <td class="blue">Triple Letter</td>
+            <td></td> 
+            <td></td> 
+            <td></td> 
+            <td class="blue">Triple Letter</td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td class="pink">Double Word</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="orange">Triple Word</td> 
+            <td></td> 
+            <td></td> 
+            <td class="lblue">Double Letter</td>
+            <td></td>
+            <td></td> 
+            <td></td> 
+            <td class="orange">Triple Word</td> 
+            <td></td> 
+            <td></td>
+            <td></td> 
+            <td class="lblue">Double Letter</td>
+            <td></td>
+            <td></td> 
+            <td class="orange">Triple Word</td> 
+        </tr>
+    </table>
+
+
+</body>
+</html>
